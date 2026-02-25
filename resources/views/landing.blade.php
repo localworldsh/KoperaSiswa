@@ -607,12 +607,12 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo-text"><h1>Kopera<span>Siswa.</span></h1></div>
+        <div class="logo-text"><h1>Kopera<span>Siswa</span></h1></div>
         <div class="nav-links">
             <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#cara-kerja"><i class="fas fa-play-circle"></i> Cara Kerja</a>
             <a href="#produk"><i class="fas fa-shopping-bag"></i> Produk</a>
             <a href="{{ route('products.all') }}"><i class="fas fa-th-large"></i> Semua Produk</a>
-            <a href="#cara-kerja"><i class="fas fa-play-circle"></i> Cara Kerja</a>
             <a href="#pendaftaran" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fas fa-user-plus"></i> Daftar Jualan</a>
         </div>
     </nav>
@@ -754,7 +754,7 @@
                 <!-- Kolom 1: Logo & Deskripsi -->
                 <div class="footer-column footer-about">
                     <div class="footer-logo-f">
-                        <h2>Kopera<span>Siswa.</span></h2>
+                        <h2>Kopera<span>Siswa</span></h2>
                     </div>
                     <p class="footer-description">
                         Platform digital khusus siswa SMK Negeri 6 Balikpapan untuk mengembangkan jiwa wirausaha melalui jual beli produk kreatif.
@@ -776,18 +776,6 @@
                         <li><a href="{{ route('products.all') }}"><i class="fas fa-chevron-right"></i> Semua Produk</a></li>
                         <li><a href="#cara-kerja"><i class="fas fa-chevron-right"></i> Cara Berjualan</a></li>
                         <li><a href="#pendaftaran"><i class="fas fa-chevron-right"></i> Daftar Jualan</a></li>
-                    </ul>
-                </div>
-
-                <!-- Kolom 3: Bantuan & Info -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Bantuan & Info</h4>
-                    <ul class="footer-menu">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Syarat & Ketentuan</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kebijakan Privasi</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kontak Kami</a></li>
-                        <li><a href="/admin"><i class="fas fa-chevron-right"></i> Admin Panel</a></li>
                     </ul>
                 </div>
 

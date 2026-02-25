@@ -172,8 +172,6 @@
         <div class="logo-text"><h1>Kopera<span>Siswa.</span></h1></div>
         <div class="nav-links">
             <a href="{{ route('product.index') }}"><i class="fas fa-home"></i> Home</a>
-            <a href="{{ route('products.all') }}"><i class="fas fa-shopping-bag"></i> Semua Produk</a>
-            <a href="#cara-kerja"><i class="fas fa-play-circle"></i> Cara Kerja</a>
             <a href="{{ route('product.index') }}#pendaftaran" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem; background: var(--grad); color: white; border-radius: 16px; text-decoration: none;"><i class="fas fa-user-plus"></i> Daftar Jualan</a>
         </div>
     </nav>

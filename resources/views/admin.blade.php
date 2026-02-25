@@ -113,7 +113,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo-text"><h1>Kopera<span>Admin.</span></h1></div>
+        <div class="logo-text"><h1>Kopera<span>Siswa</span></h1></div>
         <div class="nav-links">
             <div class="admin-greet">
                 <i class="fas fa-user-shield"></i>
@@ -132,7 +132,7 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">Dashboard <span style="color:var(--primary)">Manajemen</span> <br>Produk Siswa</h1>
-            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 1rem; font-size: 1.1rem;">Panel kontrol untuk memantau, mengedit, dan menghapus produk yang tayang di aplikasi KoperaSiswa.</p>
+            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 1rem; font-size: 1.1rem;">Panel kontrol Admin untuk memantau, mengedit, dan menghapus produk yang tayang di aplikasi KoperaSiswa.</p>
         </div>
     </section>
 
