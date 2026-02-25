@@ -11,8 +11,16 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->get();
+        // Ambil hanya 6 produk terbaru untuk landing page
+        $products = Product::latest()->take(6)->get();
         return view('landing', compact('products'));
+    }
+
+    // Method baru untuk menampilkan semua produk
+    public function allProducts()
+    {
+        $products = Product::latest()->get();
+        return view('products-all', compact('products'));
     }
 
     public function show($id)
@@ -36,17 +44,13 @@ class ProductController extends Controller
 
         $imageName = null;
         if ($request->hasFile('image')) {
-            // Gunakan path absolut yang lebih aman
             $destinationPath = public_path('storage/products');
 
-            // Jika folder belum ada, buat secara manual dengan izin penuh
             if (!File::exists($destinationPath)) {
                 File::makeDirectory($destinationPath, 0755, true);
             }
 
             $imageName = time() . '.' . $request->image->getClientOriginalExtension();
-            
-            // Pindahkan file
             $request->image->move($destinationPath, $imageName);
         }
 
@@ -61,7 +65,6 @@ class ProductController extends Controller
             'image'        => $imageName,
         ]);
 
-        // Notifikasi Fonnte
         $token = env('FONNTE_TOKEN');
         $pesan = "Halo *{$request->fullName}*! 👋\n\nProduk kamu *{$request->productName}* berhasil terbit!";
         try {
@@ -98,7 +101,6 @@ class ProductController extends Controller
                 File::makeDirectory($destinationPath, 0755, true);
             }
 
-            // Hapus foto lama jika ada
             if ($product->image && File::exists($destinationPath . '/' . $product->image)) {
                 File::delete($destinationPath . '/' . $product->image);
             }
@@ -150,12 +152,8 @@ class ProductController extends Controller
     }
 
     public function adminIndex()
-{
-    // Mengambil semua produk untuk ditampilkan di tabel admin
-    $products = \App\Models\Product::all(); 
-    
-    // Mengarahkan ke file resources/views/admin.blade.php
-    return view('admin', compact('products'));
-}
-
+    {
+        $products = \App\Models\Product::all(); 
+        return view('admin', compact('products'));
+    }
 }
