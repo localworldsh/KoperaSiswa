@@ -244,7 +244,6 @@
                     <ul>
                         <li><a href="{{ route('product.index') }}">Home</a></li>
                         <li><a href="{{ route('products.all') }}">Semua Produk</a></li>
-                        <li><a href="#cara-kerja">Cara Berjualan</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
