@@ -248,13 +248,6 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Bantuan</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Kontak Kami</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
                     <h4>Sosial Media</h4>
                     <p style="font-size: 0.9rem;">Ikuti kami untuk update produk terbaru siswa.</p>
                 </div>
