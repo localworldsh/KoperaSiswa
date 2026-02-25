@@ -239,11 +239,14 @@
                     <div class="footer-logo-f"><h2>Kopera<span>Siswa.</span></h2></div>
                     <p style="font-size: 0.9rem;">Wadah resmi kreatifitas siswa SMK 6 Balikpapan.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Navigasi</h4>
-                    <ul>
-                        <li><a href="{{ route('product.index') }}">Home</a></li>
-                        <li><a href="{{ route('products.all') }}">Semua Produk</a></li>
+                <div class="footer-column">
+                    <h4 class="footer-title">Navigasi Cepat</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="#produk"><i class="fas fa-chevron-right"></i> Produk Terbaru</a></li>
+                        <li><a href="{{ route('products.all') }}"><i class="fas fa-chevron-right"></i> Semua Produk</a></li>
+                        <li><a href="#cara-kerja"><i class="fas fa-chevron-right"></i> Cara Berjualan</a></li>
+                        <li><a href="#pendaftaran"><i class="fas fa-chevron-right"></i> Daftar Jualan</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
