@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>KoperaSiswa - Kantin Digital Siswa Modern</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -38,41 +38,119 @@
         }
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION IMPROVED FOR MOBILE --- */
         .navbar { 
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1100px;
+            position: fixed; 
+            top: 20px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            width: 95%; 
+            max-width: 1100px;
             background: rgba(255, 255, 255, 0.7); 
             backdrop-filter: blur(12px) saturate(180%);
             -webkit-backdrop-filter: blur(12px) saturate(180%);
-            z-index: 1000; padding: 0.7rem 1.5rem; 
-            border-radius: 24px; border: 1px solid rgba(255,255,255,0.4);
+            z-index: 1000; 
+            padding: 0.7rem 1.5rem; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.4);
             box-shadow: var(--shadow-md);
-            display: flex; justify-content: space-between; align-items: center;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
         }
-        .logo-text h1 { font-size: 1.4rem; font-weight: 800; letter-spacing: -1px; }
-        .logo-text span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { 
-            text-decoration: none; color: var(--text-dark); 
-            font-weight: 600; font-size: 0.9rem; transition: 0.3s; 
-            opacity: 0.8;
+        .logo-text h1 { 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            letter-spacing: -1px; 
         }
-        .nav-links a:hover { color: var(--primary); opacity: 1; transform: translateY(-1px); }
-
+        
+        .logo-text span { 
+            background: var(--grad); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle:hover {
+            color: var(--primary);
+        }
+        
+        /* Navigation Links - Desktop */
+        .nav-links { 
+            display: flex; 
+            gap: 25px; 
+            align-items: center; 
+        }
+        
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+            opacity: 0.8;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover { 
+            color: var(--primary); 
+            opacity: 1; 
+            transform: translateY(-1px); 
+        }
+        
+        /* Overlay for mobile */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
         /* Button Primary */
         .btn-primary { 
-            background: var(--grad); color: white; padding: 14px 36px; 
-            border-radius: 16px; text-decoration: none; font-weight: 700; 
-            display: inline-block; transition: 0.4s; border: none; cursor: pointer;
+            background: var(--grad); 
+            color: white; 
+            padding: 14px 36px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            display: inline-block; 
+            transition: 0.4s; 
+            border: none; 
+            cursor: pointer;
             box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
         }
+        
         .btn-primary:hover { 
             transform: translateY(-3px) scale(1.02); 
             box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.5); 
         }
-
+        
         /* --- HERO SECTION --- */
         .hero { 
             padding: 4rem 0 6rem; 
@@ -80,11 +158,15 @@
                         radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
             text-align: center; 
         }
+        
         .hero-title { 
             font-size: clamp(2.5rem, 5vw, 4rem); 
-            font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px; 
+            font-weight: 800; 
+            line-height: 1.1; 
+            margin-bottom: 1.5rem; 
+            letter-spacing: -2px; 
         }
-
+        
         /* --- SEKSI CARA KERJA --- */
         .how-it-works { padding: 5rem 0; background: #fff; }
         .how-grid { 
@@ -93,6 +175,7 @@
             gap: 2rem; 
             margin-top: 3rem; 
         }
+        
         .how-card { 
             text-align: center; 
             padding: 2.5rem 1.5rem; 
@@ -102,7 +185,13 @@
             transition: 0.3s;
             position: relative;
         }
-        .how-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+        
+        .how-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: var(--shadow-md); 
+            border-color: var(--primary); 
+        }
+        
         .how-card i { 
             font-size: 2.5rem; 
             background: var(--grad); 
@@ -111,42 +200,97 @@
             margin-bottom: 1.5rem;
             display: block;
         }
+        
         .step-circle {
-            width: 30px; height: 30px; background: var(--grad); color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-weight: 800; margin: 0 auto 1rem; font-size: 0.8rem;
+            width: 30px; 
+            height: 30px; 
+            background: var(--grad); 
+            color: white;
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-weight: 800; 
+            margin: 0 auto 1rem; 
+            font-size: 0.8rem;
         }
-
+        
         /* --- PRODUCT CARDS --- */
         .products-grid { 
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 2.5rem; padding: 2rem 0 2rem; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 2.5rem; 
+            padding: 2rem 0 2rem; 
         }
-        .product-card { 
-            background: var(--white); border-radius: 28px; overflow: hidden; 
-            border: 1px solid rgba(226, 232, 240, 0.6); transition: 0.4s; 
-        }
-        .product-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); }
-        .product-image-wrapper { height: 220px; position: relative; overflow: hidden; }
-        .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .product-card:hover .product-image { transform: scale(1.1); }
         
-        .product-info { padding: 1.8rem; }
-        .price-tag { color: var(--primary); font-weight: 800; font-size: 1.4rem; margin-bottom: 1.5rem; display: block; }
+        .product-card { 
+            background: var(--white); 
+            border-radius: 28px; 
+            overflow: hidden; 
+            border: 1px solid rgba(226, 232, 240, 0.6); 
+            transition: 0.4s; 
+        }
+        
+        .product-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: var(--shadow-lg); 
+        }
+        
+        .product-image-wrapper { 
+            height: 220px; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        .product-image { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.6s; 
+        }
+        
+        .product-card:hover .product-image { 
+            transform: scale(1.1); 
+        }
+        
+        .product-info { 
+            padding: 1.8rem; 
+        }
+        
+        .price-tag { 
+            color: var(--primary); 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            margin-bottom: 1.5rem; 
+            display: block; 
+        }
         
         .btn-order-now { 
-            background: var(--grad); color: white; padding: 14px; border-radius: 14px; 
-            display: flex; align-items: center; justify-content: center; gap: 8px; 
-            text-decoration: none; font-weight: 700; transition: 0.3s;
+            background: var(--grad); 
+            color: white; 
+            padding: 14px; 
+            border-radius: 14px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: 0.3s;
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
         }
-        .btn-order-now:hover { transform: scale(1.02); opacity: 0.9; }
-
+        
+        .btn-order-now:hover { 
+            transform: scale(1.02); 
+            opacity: 0.9; 
+        }
+        
         /* Tombol Lihat Semua Produk */
         .view-all-button {
             text-align: center;
             margin: 40px 0 60px;
         }
+        
         .btn-view-all {
             background: var(--grad);
             color: white;
@@ -161,40 +305,75 @@
             transition: 0.4s;
             box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
         }
+        
         .btn-view-all:hover {
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.5);
         }
+        
         .product-count-info {
             margin-top: 15px;
             color: var(--text-gray);
             font-size: 0.95rem;
         }
+        
         .product-count-info i {
             color: var(--primary);
             margin-right: 5px;
         }
-
-        /* --- REGISTRATION FORM --- */
-        .registration-section { padding: 7rem 0; background: #f8fafc; border-radius: 60px 60px 0 0; }
-        .form-card { 
-            background: white; padding: 3.5rem; border-radius: 35px; 
-            max-width: 850px; margin: 0 auto; box-shadow: var(--shadow-md);
-        }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .full-width { grid-column: 1 / -1; }
         
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-gray); }
-        input, select, textarea { 
-            width: 100%; padding: 14px 18px; border-radius: 12px; 
-            border: 2px solid #f1f5f9; background: #f8fafc; transition: 0.3s; font-family: inherit;
+        /* --- REGISTRATION FORM --- */
+        .registration-section { 
+            padding: 7rem 0; 
+            background: #f8fafc; 
+            border-radius: 60px 60px 0 0; 
         }
+        
+        .form-card { 
+            background: white; 
+            padding: 3.5rem; 
+            border-radius: 35px; 
+            max-width: 850px; 
+            margin: 0 auto; 
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1.5rem; 
+        }
+        
+        .full-width { 
+            grid-column: 1 / -1; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            color: var(--text-gray); 
+        }
+        
+        input, select, textarea { 
+            width: 100%; 
+            padding: 14px 18px; 
+            border-radius: 12px; 
+            border: 2px solid #f1f5f9; 
+            background: #f8fafc; 
+            transition: 0.3s; 
+            font-family: inherit;
+        }
+        
         input:focus, select:focus, textarea:focus { 
-            outline: none; border-color: var(--primary); background: white; 
+            outline: none; 
+            border-color: var(--primary); 
+            background: white; 
             box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); 
         }
-
-        /* ========== FOOTER STYLES YANG DIPERBARUI ========== */
+        
+        /* ========== FOOTER STYLES ========== */
         .footer-main {
             background: #0b0f1a;
             color: #94a3b8;
@@ -202,7 +381,7 @@
             margin-top: 5rem;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-
+        
         /* Wave Effect */
         .footer-wave {
             position: absolute;
@@ -213,14 +392,14 @@
             line-height: 0;
             transform: rotate(180deg);
         }
-
+        
         .footer-wave svg {
             position: relative;
             display: block;
             width: calc(100% + 1.3px);
             height: 60px;
         }
-
+        
         /* Footer Grid */
         .footer-grid {
             display: grid;
@@ -230,7 +409,7 @@
             position: relative;
             z-index: 2;
         }
-
+        
         /* Footer Logo */
         .footer-logo-f h2 {
             color: white;
@@ -239,48 +418,21 @@
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
         }
-
+        
         .footer-logo-f span {
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .footer-description {
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
             color: #94a3b8;
         }
-
-        /* Social Icons */
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-        }
-
+        
         /* Footer Titles */
         .footer-title {
             color: white;
@@ -290,7 +442,7 @@
             position: relative;
             padding-bottom: 0.8rem;
         }
-
+        
         .footer-title::after {
             content: '';
             position: absolute;
@@ -301,17 +453,17 @@
             background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
             border-radius: 3px;
         }
-
+        
         /* Footer Menu */
         .footer-menu {
             list-style: none;
             padding: 0;
         }
-
+        
         .footer-menu li {
             margin-bottom: 0.8rem;
         }
-
+        
         .footer-menu li a {
             color: #94a3b8;
             text-decoration: none;
@@ -321,27 +473,27 @@
             gap: 0.5rem;
             font-size: 0.95rem;
         }
-
+        
         .footer-menu li a i {
             font-size: 0.7rem;
             color: #6366f1;
             transition: all 0.3s ease;
         }
-
+        
         .footer-menu li a:hover {
             color: white;
             transform: translateX(5px);
         }
-
+        
         .footer-menu li a:hover i {
             transform: translateX(3px);
         }
-
+        
         /* Contact Items */
         .footer-contact {
             margin-bottom: 2rem;
         }
-
+        
         .contact-item {
             display: flex;
             align-items: flex-start;
@@ -349,18 +501,18 @@
             margin-bottom: 1rem;
             font-size: 0.9rem;
         }
-
+        
         .contact-item i {
             color: #6366f1;
             font-size: 1.1rem;
             margin-top: 3px;
         }
-
+        
         .contact-item span {
             color: #94a3b8;
             line-height: 1.5;
         }
-
+        
         /* Statistics */
         .footer-stats {
             display: grid;
@@ -371,11 +523,11 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
+        
         .stat-item {
             text-align: center;
         }
-
+        
         .stat-number {
             color: white;
             font-size: 1.5rem;
@@ -385,73 +537,20 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .stat-label {
             font-size: 0.8rem;
             color: #64748b;
             margin-top: 0.3rem;
         }
-
-        /* Newsletter */
-        .footer-newsletter {
-            margin-top: 1.5rem;
-        }
-
-        .footer-newsletter h5 {
-            color: white;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            font-family: inherit;
-            font-size: 0.9rem;
-        }
-
-        .newsletter-form input::placeholder {
-            color: #64748b;
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: #6366f1;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .newsletter-form button {
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            border: none;
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
-        }
-
+        
         /* Divider */
         .footer-divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             margin: 2rem 0;
         }
-
+        
         /* Footer Bottom */
         .footer-bottom {
             display: flex;
@@ -462,37 +561,37 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
+        
         .copyright p {
             color: #64748b;
         }
-
+        
         .copyright strong {
             color: white;
             font-weight: 700;
         }
-
+        
         .developer-credit p {
             color: #64748b;
         }
-
+        
         .developer-credit a {
             color: #a855f7;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
-
+        
         .developer-credit a:hover {
             color: #6366f1;
             text-decoration: underline;
         }
-
+        
         .footer-badges {
             display: flex;
             gap: 1rem;
         }
-
+        
         .badge {
             display: flex;
             align-items: center;
@@ -504,12 +603,12 @@
             font-size: 0.75rem;
             font-weight: 600;
         }
-
+        
         .badge i {
             color: #6366f1;
             font-size: 0.7rem;
         }
-
+        
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -531,66 +630,120 @@
             opacity: 0;
             visibility: hidden;
         }
-
+        
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-
+        
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
         }
-
-        /* Responsive Design */
+        
+        /* ========== MOBILE RESPONSIVE STYLES ========== */
         @media (max-width: 1024px) {
+            .navbar {
+                padding: 0.7rem 1.2rem;
+            }
+            
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
         }
-
+        
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.8rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            body {
+                padding-top: 80px;
+            }
             
+            .navbar {
+                top: 10px;
+                padding: 0.5rem 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            /* Mobile Menu Toggle - Show on mobile */
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            /* Hide desktop nav links on mobile */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 40px;
+                gap: 20px;
+                transition: right 0.4s ease-in-out;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .nav-links a.btn-primary {
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+                padding: 14px !important;
+                font-size: 1rem !important;
+            }
+            
+            /* Hero section */
+            .hero {
+                padding: 2rem 0 4rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            /* Form adjustments */
+            .form-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Products grid */
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Footer */
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
                 text-align: center;
-            }
-
-            .footer-badges {
-                justify-content: center;
-            }
-
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-wave svg {
-                height: 30px;
-            }
-            
-            .footer-social {
-                justify-content: center;
             }
             
             .footer-title::after {
                 left: 50%;
                 transform: translateX(-50%);
-            }
-            
-            .footer-title {
-                text-align: center;
             }
             
             .footer-menu li a {
@@ -599,7 +752,100 @@
             
             .contact-item {
                 justify-content: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
                 text-align: center;
+            }
+            
+            .footer-badges {
+                justify-content: center;
+            }
+            
+            .footer-wave svg {
+                height: 40px;
+            }
+            
+            /* How it works grid */
+            .how-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Buttons */
+            .btn-view-all {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem !important;
+            }
+            
+            .how-card {
+                padding: 2rem 1rem;
+            }
+            
+            .product-info {
+                padding: 1.5rem;
+            }
+            
+            .price-tag {
+                font-size: 1.2rem;
+            }
+            
+            .form-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            input, select, textarea {
+                padding: 12px 14px;
+            }
+            
+            .footer-wave svg {
+                height: 30px;
+            }
+            
+            .footer-logo-f h2 {
+                font-size: 1.8rem;
+            }
+            
+            .developer-credit p {
+                font-size: 0.8rem;
+            }
+            
+            .badge {
+                padding: 0.2rem 0.6rem;
+                font-size: 0.7rem;
+            }
+            
+            .btn-primary {
+                padding: 12px 24px;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -607,14 +853,26 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo-text"><h1>Kopera<span>Siswa</span></h1></div>
-        <div class="nav-links">
+        <div class="logo-text">
+            <h1>Kopera<span>Siswa</span></h1>
+        </div>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Navigation Links -->
+        <div class="nav-links" id="navLinks">
             <a href="#"><i class="fas fa-home"></i> Home</a>
             <a href="#cara-kerja"><i class="fas fa-play-circle"></i> Cara Kerja</a>
             <a href="#produk"><i class="fas fa-shopping-bag"></i> Produk</a>
             <a href="{{ route('products.all') }}"><i class="fas fa-th-large"></i> Semua Produk</a>
             <a href="#pendaftaran" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;"><i class="fas fa-user-plus"></i> Daftar Jualan</a>
         </div>
+        
+        <!-- Overlay untuk mobile -->
+        <div class="nav-overlay" id="navOverlay"></div>
     </nav>
 
     <section class="hero">
@@ -740,7 +998,7 @@
         </section>
     </main>
 
-    <!-- ========== FOOTER DIPERBARUI ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="footer-main">
         <!-- Wave Effect Atas -->
         <div class="footer-wave">
@@ -759,7 +1017,6 @@
                     <p class="footer-description">
                         Platform digital khusus siswa SMK Negeri 6 Balikpapan untuk mengembangkan jiwa wirausaha melalui jual beli produk kreatif.
                     </p>
-                    <!-- Ikon media sosial telah dihapus -->
                 </div>
 
                 <!-- Kolom 2: Navigasi Cepat -->
@@ -774,7 +1031,7 @@
                     </ul>
                 </div>
 
-                <!-- Kolom 3: Kontak & Statistik (Email dihapus) -->
+                <!-- Kolom 3: Kontak & Statistik -->
                 <div class="footer-column">
                     <h4 class="footer-title">Kontak & Statistik</h4>
                     <div class="footer-contact">
@@ -782,7 +1039,6 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>SMK Negeri 6 Balikpapan</span>
                         </div>
-                        <!-- Bagian email telah dihapus -->
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <span>628567895990 / 6281255593826</span>
@@ -800,15 +1056,13 @@
                             <div class="stat-label">Penjual Aktif</div>
                         </div>
                     </div>
-
-                    <!-- Newsletter -->
                 </div>
             </div>
 
             <!-- Divider -->
             <div class="footer-divider"></div>
 
-            <!-- Footer Bottom dengan Credit Links -->
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; {{ date('Y') }} <strong>KoperaSiswa</strong>. SMK Negeri 6 Balikpapan. All rights reserved.</p>
@@ -837,8 +1091,50 @@
     </script>
     @endif
 
-    <!-- Script untuk Back to Top dan Statistik -->
+    <!-- Script untuk Mobile Menu, Back to Top, dan Statistik -->
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        
+        function toggleMobileMenu() {
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+        
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        
+        // Close menu when clicking on overlay
+        navOverlay.addEventListener('click', toggleMobileMenu);
+        
+        // Close menu when clicking on a link (for mobile)
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+        
+        // Close menu on window resize if open
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+
         // Back to Top Button
         window.addEventListener('scroll', function() {
             var backToTop = document.getElementById('backToTop');
@@ -872,9 +1168,8 @@
             window.requestAnimationFrame(step);
         }
 
-        // Set statistik (ambil dari data produk sebenarnya)
+        // Set statistik
         document.addEventListener('DOMContentLoaded', function() {
-            // Ganti angka berikut dengan data dari database
             animateNumber(document.getElementById('productCount'), 0, {{ $products->count() ?? 0 }}, 2000);
             animateNumber(document.getElementById('sellerCount'), 0, {{ $products->unique('seller_name')->count() ?? 0 }}, 2000);
         });
