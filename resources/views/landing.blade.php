@@ -759,12 +759,7 @@
                     <p class="footer-description">
                         Platform digital khusus siswa SMK Negeri 6 Balikpapan untuk mengembangkan jiwa wirausaha melalui jual beli produk kreatif.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <!-- Ikon media sosial telah dihapus -->
                 </div>
 
                 <!-- Kolom 2: Navigasi Cepat -->
@@ -779,7 +774,7 @@
                     </ul>
                 </div>
 
-                <!-- Kolom 4: Kontak & Statistik -->
+                <!-- Kolom 3: Kontak & Statistik (Email dihapus) -->
                 <div class="footer-column">
                     <h4 class="footer-title">Kontak & Statistik</h4>
                     <div class="footer-contact">
@@ -787,10 +782,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>SMK Negeri 6 Balikpapan</span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>koperasiswa@smkn6bpn.sch.id</span>
-                        </div>
+                        <!-- Bagian email telah dihapus -->
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <span>628567895990 / 6281255593826</span>
@@ -810,13 +802,6 @@
                     </div>
 
                     <!-- Newsletter -->
-                    <div class="footer-newsletter">
-                        <h5>Dapatkan Update</h5>
-                        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Fitur newsletter akan segera hadir!');">
-                            <input type="email" placeholder="Email kamu" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
                 </div>
             </div>
 
@@ -829,7 +814,7 @@
                     <p>&copy; {{ date('Y') }} <strong>KoperaSiswa</strong>. SMK Negeri 6 Balikpapan. All rights reserved.</p>
                 </div>
                 <div class="developer-credit">
-                    <p>Developed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by <a href="#" target="_blank">Tim IT SMKN 6 Balikpapan</a></p>
+                    <p>Developed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by <a href="#" target="_blank">Tim Asa dan Raya SMKN 6 Balikpapan</a></p>
                 </div>
                 <div class="footer-badges">
                     <span class="badge"><i class="fas fa-shield-alt"></i> Aman</span>

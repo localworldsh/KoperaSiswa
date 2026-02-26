@@ -100,13 +100,328 @@
         .btn-edit:hover { background: var(--primary-hover); }
         .btn-delete:hover { background: #fecaca; }
 
-        /* --- FOOTER --- */
-        .footer-main { background: #0b0f1a; color: #94a3b8; padding: 4rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; text-align: center; font-size: 0.85rem; }
+        /* ========== FOOTER STYLES ========== */
+        .footer-main {
+            background: #0b0f1a;
+            color: #94a3b8;
+            position: relative;
+            margin-top: 5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Wave Effect */
+        .footer-wave {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .footer-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        /* Footer Grid */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 3rem;
+            padding: 5rem 0 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer Logo */
+        .footer-logo-f h2 {
+            color: white;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .footer-logo-f span {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #94a3b8;
+        }
+
+        /* Footer Titles */
+        .footer-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 3px;
+        }
+
+        /* Footer Menu */
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-menu li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-menu li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-menu li a i {
+            font-size: 0.7rem;
+            color: #6366f1;
+            transition: all 0.3s ease;
+        }
+
+        .footer-menu li a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-menu li a:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Contact Items */
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: #6366f1;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .contact-item span {
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Statistics */
+        .footer-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.3rem;
+        }
+
+        /* Divider */
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            margin: 2rem 0;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright p {
+            color: #64748b;
+        }
+
+        .copyright strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        .developer-credit p {
+            color: #64748b;
+        }
+
+        .developer-credit a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a:hover {
+            color: #6366f1;
+            text-decoration: underline;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge i {
+            color: #6366f1;
+            font-size: 0.7rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
 
         @media (max-width: 768px) {
             .hero-title { font-size: 2.8rem; }
             .nav-links .admin-text { display: none; }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-badges {
+                justify-content: center;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-wave svg {
+                height: 30px;
+            }
+            
+            .footer-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-title {
+                text-align: center;
+            }
+            
+            .footer-menu li a {
+                justify-content: center;
+            }
+            
+            .contact-item {
+                justify-content: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -183,13 +498,117 @@
         </section>
     </main>
 
+    <!-- ========== FOOTER DIPERBARUI ========== -->
     <footer class="footer-main">
+        <!-- Wave Effect Atas -->
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0b0f1a" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+
         <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: Logo & Deskripsi -->
+                <div class="footer-column footer-about">
+                    <div class="footer-logo-f">
+                        <h2>Kopera<span>Siswa</span></h2>
+                    </div>
+                    <p class="footer-description">
+                        Platform digital khusus siswa SMK Negeri 6 Balikpapan untuk mengembangkan jiwa wirausaha melalui jual beli produk kreatif.
+                    </p>
+                    <!-- Ikon media sosial telah dihapus -->
+                </div>
+
+                <!-- Kolom 2: Navigasi Cepat -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Navigasi Cepat</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="#produk"><i class="fas fa-chevron-right"></i> Produk Terbaru</a></li>
+                        <li><a href="{{ route('products.all') }}"><i class="fas fa-chevron-right"></i> Semua Produk</a></li>
+                        <li><a href="#cara-kerja"><i class="fas fa-chevron-right"></i> Cara Berjualan</a></li>
+                        <li><a href="#pendaftaran"><i class="fas fa-chevron-right"></i> Daftar Jualan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Kontak & Statistik (Email dihapus) -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Kontak & Statistik</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>SMK Negeri 6 Balikpapan</span>
+                        </div>
+                        <!-- Bagian email telah dihapus -->
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>628567895990 / 6281255593826</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Statistik -->
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="productCount">0</div>
+                            <div class="stat-label">Total Produk</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="sellerCount">0</div>
+                            <div class="stat-label">Penjual Aktif</div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter (dikosongkan) -->
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="footer-divider"></div>
+
+            <!-- Footer Bottom dengan Credit Links -->
             <div class="footer-bottom">
-                <p>&copy; 2026 Panel Admin KoperaSiswa. Management System for SMK 6 Balikpapan.</p>
+                <div class="copyright">
+                    <p>&copy; {{ date('Y') }} <strong>KoperaSiswa</strong>. SMK Negeri 6 Balikpapan. All rights reserved.</p>
+                </div>
+                <div class="developer-credit">
+                    <p>Developed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by <a href="#" target="_blank">Tim Asa dan Raya SMKN 6 Balikpapan</a></p>
+                </div>
+                <div class="footer-badges">
+                    <span class="badge"><i class="fas fa-shield-alt"></i> Aman</span>
+                    <span class="badge"><i class="fas fa-bolt"></i> Cepat</span>
+                    <span class="badge"><i class="fas fa-hand-holding-heart"></i> Gratis</span>
+                </div>
             </div>
         </div>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
+
+    <!-- Script untuk Back to Top -->
+    <script>
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll untuk back to top
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 
 </body>
 </html>

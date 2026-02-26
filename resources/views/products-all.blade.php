@@ -59,6 +59,40 @@
         }
         .nav-links a:hover { color: var(--primary); opacity: 1; transform: translateY(-1px); }
 
+        /* Tombol Kembali */
+        .btn-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-back:hover {
+            background: rgba(0,0,0,0.02);
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateX(-3px);
+        }
+
+        /* Button Primary */
+        .btn-primary { 
+            background: var(--grad); color: white; padding: 14px 36px; 
+            border-radius: 16px; text-decoration: none; font-weight: 700; 
+            display: inline-block; transition: 0.4s; border: none; cursor: pointer;
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+        }
+        .btn-primary:hover { 
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.5); 
+        }
+
         /* PAGE HEADER */
         .page-header {
             text-align: center;
@@ -148,32 +182,396 @@
             border-color: var(--primary);
         }
 
-        /* FOOTER */
-        .footer-main { background: #0b0f1a; color: #94a3b8; padding: 6rem 0 2rem; margin-top: 5rem; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 4rem; }
-        .footer-logo-f h2 { color: white; font-weight: 800; font-size: 1.8rem; margin-bottom: 1rem; }
-        .footer-logo-f span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 12px; }
-        .footer-links ul li a { color: #94a3b8; text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
-        .footer-links ul li a:hover { color: white; padding-left: 8px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.85rem; }
+        /* ========== FOOTER STYLES ========== */
+        .footer-main {
+            background: #0b0f1a;
+            color: #94a3b8;
+            position: relative;
+            margin-top: 5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Wave Effect */
+        .footer-wave {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .footer-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        /* Footer Grid */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 3rem;
+            padding: 5rem 0 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer Logo */
+        .footer-logo-f h2 {
+            color: white;
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .footer-logo-f span {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #94a3b8;
+        }
+
+        /* Footer Titles */
+        .footer-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 3px;
+        }
+
+        /* Footer Menu */
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-menu li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-menu li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-menu li a i {
+            font-size: 0.7rem;
+            color: #6366f1;
+            transition: all 0.3s ease;
+        }
+
+        .footer-menu li a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-menu li a:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Contact Items */
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: #6366f1;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .contact-item span {
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Statistics */
+        .footer-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.3rem;
+        }
+
+        /* Newsletter */
+        .footer-newsletter {
+            margin-top: 1.5rem;
+        }
+
+        .footer-newsletter h5 {
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #64748b;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #6366f1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Divider */
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            margin: 2rem 0;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright p {
+            color: #64748b;
+        }
+
+        .copyright strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        .developer-credit p {
+            color: #64748b;
+        }
+
+        .developer-credit a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a:hover {
+            color: #6366f1;
+            text-decoration: underline;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge i {
+            color: #6366f1;
+            font-size: 0.7rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
 
         @media (max-width: 768px) {
             .filter-section { flex-direction: column; align-items: stretch; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-badges {
+                justify-content: center;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-wave svg {
+                height: 30px;
+            }
+            
+            .footer-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-title {
+                text-align: center;
+            }
+            
+            .footer-menu li a {
+                justify-content: center;
+            }
+            
+            .contact-item {
+                justify-content: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
+        <!-- Tombol Kembali di pojok kiri -->
+        <a href="javascript:history.back()" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </a>
+        
+        <!-- Logo di tengah (tetap ada) -->
         <div class="logo-text"><h1>Kopera<span>Siswa</span></h1></div>
-        <div class="nav-links">
-            <a href="{{ route('product.index') }}"><i class="fas fa-home"></i> Home</a>
-            <a href="{{ route('product.index') }}#pendaftaran" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem; background: var(--grad); color: white; border-radius: 16px; text-decoration: none;"><i class="fas fa-user-plus"></i> Daftar Jualan</a>
-        </div>
+        
+        <!-- Tombol Daftar Jualan di pojok kanan -->
+
     </nav>
 
     <main class="container">
@@ -232,32 +630,95 @@
         </div>
     </main>
 
+    <!-- ========== FOOTER DIPERBARUI ========== -->
     <footer class="footer-main">
+        <!-- Wave Effect Atas -->
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0b0f1a" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-logo-f"><h2>Kopera<span>Siswa.</span></h2></div>
-                    <p style="font-size: 0.9rem;">Wadah resmi kreatifitas siswa SMK 6 Balikpapan.</p>
+                <!-- Kolom 1: Logo & Deskripsi -->
+                <div class="footer-column footer-about">
+                    <div class="footer-logo-f">
+                        <h2>Kopera<span>Siswa</span></h2>
+                    </div>
+                    <p class="footer-description">
+                        Platform digital khusus siswa SMK Negeri 6 Balikpapan untuk mengembangkan jiwa wirausaha melalui jual beli produk kreatif.
+                    </p>
+                    <!-- Ikon media sosial telah dihapus -->
                 </div>
+
+                <!-- Kolom 2: Navigasi Cepat -->
                 <div class="footer-column">
                     <h4 class="footer-title">Navigasi Cepat</h4>
                     <ul class="footer-menu">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Beranda</a></li>
-                        <li><a href="#produk"><i class="fas fa-chevron-right"></i> Produk Terbaru</a></li>
+                        <li><a href="{{ route('product.index') }}"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="{{ route('product.index') }}#produk"><i class="fas fa-chevron-right"></i> Produk Terbaru</a></li>
                         <li><a href="{{ route('products.all') }}"><i class="fas fa-chevron-right"></i> Semua Produk</a></li>
-                        <li><a href="#cara-kerja"><i class="fas fa-chevron-right"></i> Cara Berjualan</a></li>
-                        <li><a href="#pendaftaran"><i class="fas fa-chevron-right"></i> Daftar Jualan</a></li>
+                        <li><a href="{{ route('product.index') }}#cara-kerja"><i class="fas fa-chevron-right"></i> Cara Berjualan</a></li>
+                        <li><a href="{{ route('product.index') }}#pendaftaran"><i class="fas fa-chevron-right"></i> Daftar Jualan</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Sosial Media</h4>
-                    <p style="font-size: 0.9rem;">Ikuti kami untuk update produk terbaru siswa.</p>
+
+                <!-- Kolom 3: Kontak & Statistik (Email dihapus) -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Kontak & Statistik</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>SMK Negeri 6 Balikpapan</span>
+                        </div>
+                        <!-- Bagian email telah dihapus -->
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>628567895990 / 6281255593826</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Statistik -->
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="productCount">0</div>
+                            <div class="stat-label">Total Produk</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="sellerCount">0</div>
+                            <div class="stat-label">Penjual Aktif</div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+
                 </div>
             </div>
+
+            <!-- Divider -->
+            <div class="footer-divider"></div>
+
+            <!-- Footer Bottom dengan Credit Links -->
             <div class="footer-bottom">
-                <p>&copy; 2026 KoperaSiswa. SMK 6 Balikpapan.</p>
+                <div class="copyright">
+                    <p>&copy; {{ date('Y') }} <strong>KoperaSiswa</strong>. SMK Negeri 6 Balikpapan. All rights reserved.</p>
+                </div>
+                <div class="developer-credit">
+                    <p>Developed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by <a href="#" target="_blank">Tim Asa dan Raya MKN 6 Balikpapan</a></p>
+                </div>
+                <div class="footer-badges">
+                    <span class="badge"><i class="fas fa-shield-alt"></i> Aman</span>
+                    <span class="badge"><i class="fas fa-bolt"></i> Cepat</span>
+                    <span class="badge"><i class="fas fa-hand-holding-heart"></i> Gratis</span>
+                </div>
             </div>
         </div>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 
     <script>
@@ -300,6 +761,45 @@
                 grid.appendChild(product);
             });
         }
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll untuk back to top
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animasi angka statistik
+        function animateNumber(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Set statistik
+        document.addEventListener('DOMContentLoaded', function() {
+            animateNumber(document.getElementById('productCount'), 0, {{ $products->count() ?? 0 }}, 2000);
+            animateNumber(document.getElementById('sellerCount'), 0, {{ $products->unique('seller_name')->count() ?? 0 }}, 2000);
+        });
     </script>
 
 </body>
