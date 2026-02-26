@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Admin Dashboard - KoperaSiswa</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -70,35 +70,204 @@
             font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px; 
         }
 
+        /* --- FILTER SECTION --- */
+        .filter-section {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid #f1f5f9;
+        }
+
+        .filter-section i {
+            font-size: 1.2rem;
+        }
+
+        .filter-section select,
+        .filter-section input[type="text"] {
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            border: 2px solid #f1f5f9;
+            background: #f8fafc;
+            font-family: inherit;
+            font-size: 0.95rem;
+            min-width: 180px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-section select:focus,
+        .filter-section input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .filter-section input[type="text"] {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .filter-stats {
+            margin-left: auto;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .filter-stats span {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
         /* --- PRODUCT CARDS --- */
         .products-grid { 
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 2.5rem; padding: 2rem 0 6rem; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 2.5rem; 
+            padding: 2rem 0 6rem; 
         }
+        
         .product-card { 
-            background: var(--white); border-radius: 28px; overflow: hidden; 
-            border: 1px solid rgba(226, 232, 240, 0.6); transition: 0.4s; 
+            background: var(--white); 
+            border-radius: 28px; 
+            overflow: hidden; 
+            border: 1px solid rgba(226, 232, 240, 0.6); 
+            transition: 0.4s; 
+            opacity: 1;
+            transform: scale(1);
         }
-        .product-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-lg); }
-        .product-image-wrapper { height: 220px; position: relative; overflow: hidden; }
-        .product-image { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
         
-        .product-info { padding: 1.8rem; }
-        .price-tag { color: var(--primary); font-weight: 800; font-size: 1.4rem; margin-bottom: 1.5rem; display: block; }
+        .product-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: var(--shadow-lg); 
+        }
         
-        .action-group { display: flex; gap: 10px; margin-top: 15px; }
+        .product-card.hidden {
+            display: none;
+        }
+        
+        .product-image-wrapper { 
+            height: 220px; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        .product-image { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.6s; 
+        }
+        
+        .product-info { 
+            padding: 1.8rem; 
+        }
+        
+        .price-tag { 
+            color: var(--primary); 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            margin-bottom: 1.5rem; 
+            display: block; 
+        }
+        
+        .action-group { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 15px; 
+        }
+        
         .btn-edit { 
-            flex: 1; background: #6366f1; color: white; text-align: center; 
-            padding: 12px; border-radius: 12px; text-decoration: none; font-size: 0.85rem; font-weight: 700; 
+            flex: 1; 
+            background: #6366f1; 
+            color: white; 
+            text-align: center; 
+            padding: 12px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
+        
         .btn-delete { 
-            flex: 1; background: #fee2e2; color: #f43f5e; border: none; 
-            padding: 12px; border-radius: 12px; cursor: pointer; font-size: 0.85rem; font-weight: 700; 
+            flex: 1; 
+            background: #fee2e2; 
+            color: #f43f5e; 
+            border: none; 
+            padding: 12px; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .btn-edit:hover { 
+            background: var(--primary-hover); 
+            transform: translateY(-2px);
+        }
+        
+        .btn-delete:hover { 
+            background: #fecaca; 
+            transform: translateY(-2px);
+        }
+
+        /* No Results Message */
+        .no-results {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 4rem;
+            background: white;
+            border-radius: 24px;
+            border: 2px dashed #e2e8f0;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+        }
+
+        .no-results p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .no-results button {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: var(--grad);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
             transition: 0.3s;
         }
-        .btn-edit:hover { background: var(--primary-hover); }
-        .btn-delete:hover { background: #fecaca; }
+
+        .no-results button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
 
         /* ========== FOOTER STYLES ========== */
         .footer-main {
@@ -377,8 +546,38 @@
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.8rem; }
-            .nav-links .admin-text { display: none; }
+            body {
+                padding-top: 80px;
+            }
+
+            .navbar {
+                top: 10px;
+                padding: 0.5rem 1rem;
+            }
+
+            .hero-title { 
+                font-size: 2.2rem; 
+            }
+
+            .admin-text { 
+                display: none; 
+            }
+
+            .filter-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-section select,
+            .filter-section input[type="text"] {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .filter-stats {
+                margin-left: 0;
+                text-align: center;
+            }
             
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -401,6 +600,27 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 2rem 0 3rem;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .action-group {
+                flex-direction: column;
+            }
+
             .footer-wave svg {
                 height: 30px;
             }
@@ -458,9 +678,35 @@
                 <div style="width: 50px; height: 4px; background: var(--grad); margin: 10px auto; border-radius: 10px;"></div>
             </div>
             
-            <div class="products-grid">
-                @forelse($products as $p)
-                <article class="product-card">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <i class="fas fa-filter" style="color: var(--text-gray);"></i>
+                <span style="font-weight: 600;">Filter:</span>
+                
+                <select id="categoryFilter" onchange="filterProducts()">
+                    <option value="all">Semua Kategori</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                    <option value="Aksesoris">Aksesoris</option>
+                    <option value="Jasa">Jasa / Digital</option>
+                </select>
+
+                <input type="text" id="searchInput" placeholder="Cari produk atau penjual..." onkeyup="filterProducts()">
+                
+                <select id="sortFilter" onchange="filterProducts()">
+                    <option value="terbaru">Terbaru</option>
+                    <option value="termurah">Harga Termurah</option>
+                    <option value="termahal">Harga Termahal</option>
+                </select>
+
+                <div class="filter-stats">
+                    <i class="fas fa-box"></i> <span id="visibleCount">0</span>/<span id="totalCount">{{ $products->count() }}</span> produk
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                @forelse($products as $index => $p)
+                <article class="product-card" data-category="{{ $p->category }}" data-price="{{ $p->price }}" data-name="{{ strtolower($p->product_name) }}" data-seller="{{ strtolower($p->seller_name) }}" data-index="{{ $index }}">
                     <div class="product-image-wrapper">
                         <img src="{{ asset('storage/products/' . $p->image) }}" class="product-image" alt="{{ $p->product_name }}">
                     </div>
@@ -477,7 +723,7 @@
                         
                         <div class="action-group">
                             <a href="{{ route('product.edit', $p->id) }}" class="btn-edit">
-                                <i class="far fa-edit"></i> Edit Produk
+                                <i class="far fa-edit"></i> Edit
                             </a>
                             <form action="{{ route('product.destroy', $p->id) }}" method="POST" onsubmit="return confirm('Hapus produk ini secara permanen?')" style="flex:1;">
                                 @csrf @method('DELETE')
@@ -494,11 +740,20 @@
                     <p style="color: var(--text-gray);">Tidak ada produk untuk dikelola.</p>
                 </div>
                 @endforelse
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults">
+                    <i class="fas fa-search"></i>
+                    <p>Tidak ada produk yang ditemukan</p>
+                    <button onclick="resetFilters()">
+                        <i class="fas fa-redo-alt"></i> Reset Filter
+                    </button>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- ========== FOOTER DIPERBARUI ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="footer-main">
         <!-- Wave Effect Atas -->
         <div class="footer-wave">
@@ -517,7 +772,6 @@
                     <p class="footer-description">
                         Platform digital khusus siswa SMK Negeri 6 Balikpapan untuk mengembangkan jiwa wirausaha melalui jual beli produk kreatif.
                     </p>
-                    <!-- Ikon media sosial telah dihapus -->
                 </div>
 
                 <!-- Kolom 2: Navigasi Cepat -->
@@ -532,7 +786,7 @@
                     </ul>
                 </div>
 
-                <!-- Kolom 3: Kontak & Statistik (Email dihapus) -->
+                <!-- Kolom 3: Kontak & Statistik -->
                 <div class="footer-column">
                     <h4 class="footer-title">Kontak & Statistik</h4>
                     <div class="footer-contact">
@@ -540,7 +794,6 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span>SMK Negeri 6 Balikpapan</span>
                         </div>
-                        <!-- Bagian email telah dihapus -->
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <span>628567895990 / 6281255593826</span>
@@ -558,15 +811,13 @@
                             <div class="stat-label">Penjual Aktif</div>
                         </div>
                     </div>
-
-                    <!-- Newsletter (dikosongkan) -->
                 </div>
             </div>
 
             <!-- Divider -->
             <div class="footer-divider"></div>
 
-            <!-- Footer Bottom dengan Credit Links -->
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; {{ date('Y') }} <strong>KoperaSiswa</strong>. SMK Negeri 6 Balikpapan. All rights reserved.</p>
@@ -588,7 +839,7 @@
         </a>
     </footer>
 
-    <!-- Script untuk Back to Top -->
+    <!-- Script untuk Filter, Sorting, dan Back to Top -->
     <script>
         // Back to Top Button
         window.addEventListener('scroll', function() {
@@ -608,6 +859,107 @@
                 behavior: 'smooth'
             });
         });
+
+        // Filter dan Sorting Function
+        function filterProducts() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const sortFilter = document.getElementById('sortFilter').value;
+            
+            const products = document.querySelectorAll('.product-card');
+            const productsGrid = document.getElementById('productsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            let visibleCount = 0;
+            
+            // Filter produk berdasarkan kategori dan pencarian
+            products.forEach(product => {
+                const category = product.dataset.category;
+                const productName = product.dataset.name;
+                const sellerName = product.dataset.seller;
+                
+                const matchesCategory = categoryFilter === 'all' || category === categoryFilter;
+                const matchesSearch = productName.includes(searchInput) || sellerName.includes(searchInput);
+                
+                if (matchesCategory && matchesSearch) {
+                    product.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    product.classList.add('hidden');
+                }
+            });
+            
+            // Sorting
+            if (sortFilter !== 'terbaru') {
+                const sortedProducts = Array.from(products).filter(p => !p.classList.contains('hidden'));
+                
+                sortedProducts.sort((a, b) => {
+                    const priceA = parseInt(a.dataset.price);
+                    const priceB = parseInt(b.dataset.price);
+                    
+                    if (sortFilter === 'termurah') {
+                        return priceA - priceB;
+                    } else if (sortFilter === 'termahal') {
+                        return priceB - priceA;
+                    }
+                });
+                
+                // Reorder DOM
+                sortedProducts.forEach(product => {
+                    productsGrid.appendChild(product);
+                });
+            }
+            
+            // Update visible count
+            document.getElementById('visibleCount').textContent = visibleCount;
+            
+            // Show/hide no results message
+            if (visibleCount === 0 && products.length > 0) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+        }
+        
+        // Reset filters
+        function resetFilters() {
+            document.getElementById('categoryFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('sortFilter').value = 'terbaru';
+            filterProducts();
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set total count
+            const totalProducts = document.querySelectorAll('.product-card').length;
+            document.getElementById('totalCount').textContent = totalProducts;
+            document.getElementById('visibleCount').textContent = totalProducts;
+            
+            // Animate stats
+            animateNumber(document.getElementById('productCount'), 0, totalProducts, 2000);
+            
+            // Hitung unique sellers
+            const sellers = new Set();
+            document.querySelectorAll('.product-card').forEach(p => {
+                sellers.add(p.dataset.seller);
+            });
+            animateNumber(document.getElementById('sellerCount'), 0, sellers.size, 2000);
+        });
+        
+        // Animasi angka
+        function animateNumber(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
     </script>
 
 </body>
