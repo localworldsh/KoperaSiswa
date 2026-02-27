@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Http;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        // Ambil hanya 6 produk terbaru untuk landing page
-        $products = Product::latest()->take(6)->get();
-        return view('landing', compact('products'));
-    }
+public function index()
+{
+    // Tampilkan SEMUA produk tanpa batasan
+    $products = Product::latest()->get();
+    return view('landing', compact('products'));
+}
 
     // Method baru untuk menampilkan semua produk
     public function allProducts()
