@@ -705,7 +705,7 @@
                     <p>&copy; {{ date('Y') }} <strong>KoperaSiswa</strong>. SMK Negeri 6 Balikpapan. All rights reserved.</p>
                 </div>
                 <div class="developer-credit">
-                    <p>Developed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by <a href="#" target="_blank">Tim Asa dan Raya MKN 6 Balikpapan</a></p>
+                    <p>Developed with <i class="fas fa-heart" style="color: #f43f5e;"></i> by <a href="#" target="_blank">Tim A&R MKN 6 Balikpapan</a></p>
                 </div>
                 <div class="footer-badges">
                     <span class="badge"><i class="fas fa-shield-alt"></i> Aman</span>
